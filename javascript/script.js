@@ -217,10 +217,10 @@ function functietest(_title, _poster_path, _vote_average, _overview, _id) {
     }
 
     function averagecolor(average) {
-        if (average < 3) {
-            ratingwindow.style.Color = "red";
+        if (average < 3 && average >0) {
+            ratingwindow.style.color = "red";
         }
-        if (average > 3 && average <= 4) {
+        if (average >= 3 && average <= 4) {
             ratingwindow.style.color = "yellow";
         }
         if (average > 4 && average <= 5) {
@@ -341,13 +341,66 @@ function functietest(_title, _poster_path, _vote_average, _overview, _id) {
     const plsrate = document.createElement("h3");
     plsrate.classList.add("h2rate");
     plsrate.innerHTML = `
-        Please rate "${_title}":
+        Rate this movie:
      `
 
     ratingsistele.appendChild(plsrate);
     ratingsistele.appendChild(movieRating);
     movieEl3.appendChild(ratingsistele);
     // movieRating.appendChild(input);
+
+
+    /// //     ADAUGARE COMENTARII     /////////////////////                      ////////
+    
+    const urlcomentarii=base_url+"/movie/"+_id+"/reviews?"+API_KEY+"&language=en-US&page=1";
+    getcoments(urlcomentarii);
+    function getcoments(urlcomentarii) {
+        fetch(urlcomentarii).then(res => res.json()).then(data => {
+            console.log(data.results);
+        
+            showcomments(data.results);
+
+        })
+    }
+
+  //  const reviewtitle=document.createElement("div");
+       // reviewtitle.classList.add("divcomments");
+
+       // reviewtitle.innerHTML=`
+        //<h2>Reviews</h2>
+      //  `
+        //container.appendChild(reviewtitle);
+
+    function showcomments(data)
+    {
+        data.forEach(element =>{
+            const{
+                author,
+                content,
+                id,
+                updated_at,
+            }=element
+
+        const divcoments=document.createElement("div");
+        divcoments.classList.add("divcomments");
+
+        divcoments.innerHTML=`
+        <h4>${author}</h4>
+        <p>${content}<p>
+        `
+        const time=document.createElement("div");
+        time.classList.add("time");
+
+            time.innerHTML=`
+            <p>${updated_at.split('T',1)}</p>
+            `
+            divcoments.appendChild(time);
+        container.appendChild(divcoments);
+        });
+
+    
+    }
+    
 
 
     main.appendChild(container);

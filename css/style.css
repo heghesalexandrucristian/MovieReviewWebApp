@@ -40,6 +40,7 @@ header {
     background-color: white;
     height: 15px;
     width: 300px;
+    border-style: hidden;
 
 }
 
@@ -511,7 +512,7 @@ header a {
     justify-content: center;
     align-items: center;
    /* font-size: xx-large; */
-    color: black;
+    color: rgb(255, 255, 255);
     border-radius: 50%;
     box-shadow: 5px 5px 5px black;
 
@@ -552,6 +553,33 @@ header a {
 .rating h2{
     font-family: roboto;
    /* font-size: 36px; */
+}
+
+.divcomments{
+    order: 5;
+    padding-inline-start: 1%;
+    padding-inline-end: 1%;
+    font-family: roboto;
+    color: #d4d4d4;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-top: #a29e9e;
+    border-top-style: solid;
+    border-width: thin;
+    width: 100%;
+    /*&display:flex;
+    flex-wrap: wrap;
+    height: 200px;
+    overflow-y: scroll; */
+
+}
+
+.divcomments h4{
+  /*  text-decoration: underline; */
+}
+
+.time{
+    display: flex;
+    justify-content: flex-end;
 }
 
 /*
