@@ -217,8 +217,8 @@ function functietest(_title, _poster_path, _vote_average, _overview, _id) {
     }
 
     function averagecolor(average) {
-        if (average < 3) {
-            ratingwindow.style.Color = "red";
+        if (average < 3 && average >0) {
+            ratingwindow.style.color = "red";
         }
         if (average >= 3 && average <= 4) {
             ratingwindow.style.color = "yellow";
@@ -341,7 +341,7 @@ function functietest(_title, _poster_path, _vote_average, _overview, _id) {
     const plsrate = document.createElement("h3");
     plsrate.classList.add("h2rate");
     plsrate.innerHTML = `
-        Please rate "${_title}":
+        Rate this movie:
      `
 
     ratingsistele.appendChild(plsrate);
