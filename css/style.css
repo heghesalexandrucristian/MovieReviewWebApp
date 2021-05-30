@@ -1,0 +1,636 @@
+@font-face {
+    font-family: roboto;
+    src: url("/proiectWEB/fonts/Roboto-Black.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+body {
+    height: 100%;
+    background-color: rgba(93, 93, 93, 55%);
+    margin: 0%;
+    padding: 0%;
+}
+
+
+
+
+
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    height: 50px;
+    justify-content: flex-end;
+}
+
+#form {
+    margin-right: 40px;
+}
+
+.search {
+    background-color: transparent;
+    border: 2px solid;
+    padding: 0.5rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: black;
+    background-color: white;
+    height: 15px;
+    width: 300px;
+
+}
+
+.search:focus {
+    outline: none;
+}
+
+main {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#main2 {
+    height: 100vh;
+}
+
+.movie {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    margin-top: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.9);
+    background-color: rgba(95, 93, 93, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.movie-info h3 {
+    display: contents;
+    margin-top: 0%;
+}
+
+
+.movie-info {
+    font-family: roboto;
+    width: 100%;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    letter-spacing: 0.5px;
+}
+
+.movie-info span {
+    font-size: 150%;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-shadow: 0.5px 0.5px black;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-weight: 1000;
+
+
+}
+
+.movie-info span.green {
+    color: rgb(94, 255, 0);
+}
+
+.movie-info span.orange {
+    color: rgb(255, 157, 0);
+}
+
+.movie-info span.red {
+    color: red;
+}
+
+.movie img {
+    width: 100%;
+
+}
+
+.overview {
+    font-family: roboto;
+    font-weight: 900;
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    padding: 0.5rem 1rem;
+    max-height: 100%;
+    background-color: rgb(212, 212, 212, 0.95);
+    transform: translateY(101%);
+    transition-duration: 500ms;
+
+}
+
+.movie:hover .overview {
+    display: flex;
+    flex-wrap: wrap;
+    transform: translateY(0%);
+    text-align: start;
+}
+
+.movie:hover {
+    transform: scale(1.1);
+    transition-duration: 300ms;
+    cursor: pointer;
+}
+
+#login {
+    color: rgb(255, 255, 255);
+    font-weight: 900;
+    text-shadow: 2px 2px black;
+    background-color: royalblue;
+    border-color: rgb(255, 255, 255);
+    height: auto;
+    width: 120px;
+    border-radius: 15px;
+    border-color: rgb(0, 0, 0);
+}
+
+footer {
+    background-color: #2f3947;
+    display: flex;
+    height: 50px;
+    bottom: 0;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 50px;
+
+}
+
+.logoAPI {
+    margin-right: 10px;
+    height: 35px;
+}
+
+
+.logoAPI a img {
+    height: 100%;
+}
+
+.testare {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5%;
+    /*height: 70%;*/
+    /* width: 80%;*/
+    background-color: rgb(0, 0, 0, 0.5);
+    border-radius: 5px;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.9);
+
+
+}
+
+.movie2 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
+    /*margin: 1.5%; */
+    border-radius: 5px;
+    /*  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.9); */
+    background-color: rgba(95, 93, 93, 0.1);
+    position: relative;
+    overflow: hidden;
+    /* align-self: center;*/
+    order: 1;
+}
+
+.movie2 img {
+    width: 100%;
+}
+
+
+.text {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #d4d4d4;
+    font-family: roboto;
+   /* font-size: 150%; */
+    display: flex;
+    width: 50%;
+    flex-wrap: wrap;
+    align-items: baseline;
+    align-content: start;
+    order: 3;
+    padding-inline-start: 1%;
+    padding-inline-end: 1%;
+    font-size: 110%;
+    /* border-radius: 5px; */
+}
+
+.rating {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #d4d4d4;
+    width: 48%;
+    order: 4;
+}
+
+
+.trailer {
+    display: flex;
+    width: 70%;
+    order: 2;
+}
+
+.trailer iframe {
+    border-style: none;
+    border-radius: 5px;
+    width: 100%;
+}
+
+
+/*
+CP
+*/
+
+
+
+.formlogare {
+    width: 400px;
+    background-color: #ffffff;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+    margin: auto;
+}
+
+.formlogare h1 {
+    text-align: center;
+    color: #5b6574;
+    font-size: 24px; 
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+}
+
+.formlogare form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.formlogare form label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+
+}
+
+.formlogare form input[type="password"],
+.formlogare form input[type="text"] {
+    width: 310px;
+    height: 48px;
+    border: 1px solid #dee0e4;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+
+.formlogare form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    margin-top: 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+}
+
+.formlogare form input[type="submit"]:hover {
+    background-color: rgba(0, 94, 200, 0.7);
+    transition: background-color 0.2s;
+}
+
+
+.formlogare form input[type="button"] {
+    margin-left: 70%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    border: none;
+    padding: 5px;
+    margin-top: 30px;
+    width: 30%;
+    cursor: pointer;
+
+}
+
+/*
+
+test
+*/
+
+.navtop {
+    background-color: #2f3947;
+    height: 60px;
+    width: 100%;
+    border: 0;
+
+}
+
+.navtop div {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.navtop div h1,
+.navtop div a {
+    display: inline-flex;
+    align-items: center;
+}
+
+.navtop div h1 {
+    flex: 1;
+    font-size: 24px; 
+    padding: 0;
+    margin: 0;
+    color: #eaebed;
+    font-weight: normal;
+}
+
+.navtop div a {
+    padding: 0 20px;
+    text-decoration: none;
+    color: #c1c4c8;
+    font-weight: bold;
+}
+
+.navtop div a i {
+    padding: 2px 8px 0 0;
+}
+
+.navtop div a:hover {
+    color: #eaebed;
+}
+
+body.loggedin {
+    background-color: #f3f4f7;
+}
+
+.content {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.content h2 {
+    margin: 0;
+    padding: 25px 0;
+   /* font-size: 22px; */
+    border-bottom: 1px solid #e0e0e3;
+    color: #4a536e;
+}
+
+.content>p,
+.content>div {
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+    margin: 25px 0;
+    padding: 25px;
+    background-color: #fff;
+}
+
+.content>p table td,
+.content>div table td {
+    padding: 5px;
+}
+
+.content>p table td:first-child,
+.content>div table td:first-child {
+    font-weight: bold;
+    color: #4a536e;
+    padding-right: 15px;
+}
+
+.content>div p {
+    padding: 5px;
+    margin: 0 0 10px 0;
+}
+
+header a {
+    cursor: pointer;
+}
+
+#h1 {
+    flex: 1;
+}
+
+
+.register {
+    width: 400px;
+    background-color: #ffffff;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+    margin: auto;
+}
+
+.register h1 {
+    text-align: center;
+    color: #5b6574;
+    font-size: 24px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+}
+
+.register form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.register form label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+}
+
+
+.register form input[type="password"],
+.register form input[type="text"],
+.register form input[type="email"],
+.register form input[type="nume"],
+.register form input[type="prenume"],
+.register form input[type="nrtelefon"] {
+    width: 310px;
+    height: 50px;
+    border: 1px solid #dee0e4;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+
+.register form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+}
+
+.register form input[type="submit"]:hover {
+    background-color: rgba(0, 94, 200, 0.7);
+    transition: background-color 0.2s;
+}
+
+.navtop div a {
+    margin-right: 10px;
+}
+
+#form {
+    margin-left: auto;
+}
+
+.navtop {
+    justify-content: space-between;
+}
+
+
+.ratingwindow{
+    font-family: roboto;
+    background-color: white;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   /* font-size: xx-large; */
+    color: black;
+    border-radius: 50%;
+    box-shadow: 5px 5px 5px black;
+
+}
+
+.ratings span{
+    font-size: xx-large; 
+    color: rgb(246, 246, 246);
+}
+
+.ratingwindow{
+    font-size: 40px; 
+    margin-left: 30%;
+    margin-right: 30%;
+    background-color: rgba(0, 0, 0, 0.66) ;
+    /*margin-top: 5%;*/
+    /*margin-bottom: 5%; */
+}
+
+.ratingsistele{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.h2rate{
+    font-family: roboto;
+    margin-right: auto;
+    width: 100%;
+    /*font-size: 25px; */
+}
+
+.ratings{
+    font-family: roboto;
+    margin-bottom: 5%;
+}
+
+.rating h2{
+    font-family: roboto;
+   /* font-size: 36px; */
+}
+
+/*
+responsive
+
+*/
+
+@media only screen and (max-width: 767px) {
+
+    .movie2{
+        width: 100%;
+    }
+
+    .trailer{
+        width: 100%;
+        height: 500px;
+    }
+
+    .navtop div a {
+        padding: 0px;
+    }
+
+    #form {
+        width: 50%;
+        margin-right: 0px;
+    }
+
+    #search {
+        width: 80%;
+    }
+
+    .formlogare {
+        width: 100%;
+    }
+
+    .formlogare form input[type="text"],
+    .formlogare form input[type="password"] {
+        width: 75%;
+    }
+
+    .formlogare form label {
+        width: 15%
+    }
+
+
+
+    .register {
+        width: 90%;
+        width: 100%;
+    }
+
+    .register form input[type="password"],
+    .register form input[type="text"],
+    .register form input[type="email"],
+    .register form input[type="nume"],
+    .register form input[type="prenume"],
+    .register form input[type="nrtelefon"] {
+        width: 75%;
+        height: 48px;
+    }
+
+    .register form label {
+        width: 15%;
+    }
+
+    #main2 {
+        height: 100vh;
+    }
+
+
+    .ratings span{
+        font-size: x-large;
+        color: rgb(239, 255, 13);
+    }
+
+    .ratingwindow{
+        width: 70px;
+        height: 70px;
+    }
+
+
+}
