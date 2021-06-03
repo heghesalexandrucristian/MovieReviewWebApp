@@ -8,7 +8,7 @@ if (!isset($_SESSION['loggedin'])) {
     $id=$_SESSION["id"];
 }
 
-echo($id);
+//echo($id);
 
 $value = $_POST['value'];
 $testid=$_POST['testid'];

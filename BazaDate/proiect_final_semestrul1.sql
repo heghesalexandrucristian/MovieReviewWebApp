@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2021 at 10:23 AM
+-- Generation Time: Jun 03, 2021 at 10:25 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -104,7 +104,9 @@ CREATE TABLE `date_utilizator` (
 INSERT INTO `date_utilizator` (`idutilizator`, `adresa_avatar`, `nr_comentarii`) VALUES
 (1, 'https://i.pinimg.com/originals/47/0e/f8/470ef850ead81a0bb4f4cf69a0de2e99.jpg', 0),
 (2, 'https://w7.pngwing.com/pngs/66/227/png-transparent-rustin-cohle-television-show-fan-art-true-detective-poster-simple-black-and-white-beach-head-television-beach-white.png', 0),
-(8, 'https://i.imgur.com/i2N7VWY.jpg', 0);
+(8, 'https://i.imgur.com/i2N7VWY.jpg', 0),
+(14, 'https://st.depositphotos.com/2101611/3925/v/600/depositphotos_39258143-stock-illustration-businessman-avatar-profile-picture.jpg', 0),
+(15, 'https://st.depositphotos.com/2101611/3925/v/600/depositphotos_39258143-stock-illustration-businessman-avatar-profile-picture.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -131,6 +133,43 @@ INSERT INTO `permisiuni` (`id`, `titlu`, `slug`, `descriere`, `activ`, `creatLa`
 (11, 'edit', 'e', NULL, 1, '2021-02-02 00:00:00', '2021-05-20 17:10:01'),
 (12, 'add', 'a', NULL, 1, '2021-03-03 00:00:00', '2021-05-20 17:10:25'),
 (13, 'delete', 'd', NULL, 1, '2021-05-20 16:46:13', '2021-05-20 16:46:13');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ratings_utilizator`
+--
+
+CREATE TABLE `ratings_utilizator` (
+  `idutilizator` bigint(20) NOT NULL,
+  `idfilm` bigint(50) NOT NULL,
+  `rating` int(10) NOT NULL,
+  `nrreview` bigint(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ratings_utilizator`
+--
+
+INSERT INTO `ratings_utilizator` (`idutilizator`, `idfilm`, `rating`, `nrreview`) VALUES
+(8, 335984, 5, 1),
+(14, 337404, 1, 2),
+(8, 399566, 1, 3),
+(8, 615457, 4, 4),
+(14, 635302, 3, 5),
+(8, 791373, 2, 6),
+(14, 615457, 5, 7),
+(8, 527774, 5, 8),
+(8, 635302, 3, 9),
+(8, 586047, 3, 10),
+(14, 791373, 4, 11),
+(14, 527774, 4, 12),
+(8, 567189, 3, 13),
+(8, 632357, 1, 14),
+(8, 823855, 4, 15),
+(15, 337404, 2, 16),
+(15, 691179, 4, 17),
+(15, 823855, 3, 18);
 
 -- --------------------------------------------------------
 
@@ -215,7 +254,9 @@ INSERT INTO `utilizatori` (`id`, `rolid`, `prenume`, `nume`, `nrtelefon`, `email
 (1, 1, 'test', 'test2', NULL, NULL, '$2y$10$iCXLWv0tu3aJtDrxSBqAg.IouWvMu/yXGZn/5pUN6er5ZER57uYpC', '0000-00-00 00:00:00', NULL, 'test123'),
 (2, 3, NULL, 'alex', '0123456789', 'test@test123', '*92B208212008731A43A3C462C7B4F6F317FDCB93', '2021-05-16 14:10:17', '2011-12-13 01:02:13', 'test4'),
 (4, 1, NULL, 'alex', '0123456789', 'test@test123', '1234567890', '0000-00-00 00:00:00', NULL, 'test5'),
-(8, 3, NULL, NULL, NULL, 'admin@admin', '$2y$10$.9oY3IpFmxvQBq.ElX8JeuZXFOg1Oc8rT6oRCCjXBfBvpoL1p0mja', '0000-00-00 00:00:00', '2021-05-27 11:19:39', 'admin');
+(8, 3, NULL, NULL, NULL, 'admin@admin', '$2y$10$.9oY3IpFmxvQBq.ElX8JeuZXFOg1Oc8rT6oRCCjXBfBvpoL1p0mja', '0000-00-00 00:00:00', '2021-06-03 12:46:35', 'admin'),
+(14, 1, 'cristian', 'alexandru', '1234567890', 'test@test.com', '$2y$10$K4p1qiSijZyN9wBF7K4VMugz8jTRBsXre7jZlne0tY7RwAkXfCdTC', '2021-05-28 07:55:51', '2021-05-28 08:29:43', 'amuitatparola'),
+(15, 1, 'Cristian', 'Alex', '1234567890', 'documentatie@test.com', '$2y$10$EZavuh2kauM1gP9NICeJKe5yc8WRF6nnuba3Bnj/WrMolOJ3QDCK.', '2021-06-03 11:01:48', '2021-06-03 11:05:28', 'documentatie');
 
 -- --------------------------------------------------------
 
@@ -329,6 +370,13 @@ ALTER TABLE `permisiuni`
   ADD KEY `id` (`id`);
 
 --
+-- Indexes for table `ratings_utilizator`
+--
+ALTER TABLE `ratings_utilizator`
+  ADD PRIMARY KEY (`nrreview`),
+  ADD KEY `idutilizator` (`idutilizator`);
+
+--
 -- Indexes for table `roluri`
 --
 ALTER TABLE `roluri`
@@ -355,6 +403,12 @@ ALTER TABLE `utilizatori`
 --
 
 --
+-- AUTO_INCREMENT for table `ratings_utilizator`
+--
+ALTER TABLE `ratings_utilizator`
+  MODIFY `nrreview` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
 -- AUTO_INCREMENT for table `roluri`
 --
 ALTER TABLE `roluri`
@@ -364,7 +418,7 @@ ALTER TABLE `roluri`
 -- AUTO_INCREMENT for table `utilizatori`
 --
 ALTER TABLE `utilizatori`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Constraints for dumped tables
@@ -375,6 +429,12 @@ ALTER TABLE `utilizatori`
 --
 ALTER TABLE `date_utilizator`
   ADD CONSTRAINT `date_utilizator_ibfk_1` FOREIGN KEY (`idutilizator`) REFERENCES `utilizatori` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `ratings_utilizator`
+--
+ALTER TABLE `ratings_utilizator`
+  ADD CONSTRAINT `ratings_utilizator_ibfk_1` FOREIGN KEY (`idutilizator`) REFERENCES `utilizatori` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `roluri_permisiuni`

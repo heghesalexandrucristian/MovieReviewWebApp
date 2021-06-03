@@ -275,7 +275,6 @@ function functietest(_title, _poster_path, _vote_average, _overview, _id) {
                 stele.forEach(function (element) {
                     console.log(element);
                     testestest(element, result);
-                    stele.length = 1;
                 })
                 // console.log("amreusit");
             }
@@ -320,7 +319,7 @@ function functietest(_title, _poster_path, _vote_average, _overview, _id) {
                 },
                 success: function (result) {
                     //alert("Hi, testing");
-                    alert(result);
+                   // alert(result);
                 }
             });
         }
