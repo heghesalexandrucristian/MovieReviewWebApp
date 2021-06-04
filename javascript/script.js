@@ -318,8 +318,8 @@ function functietest(_title, _poster_path, _vote_average, _overview, _id) {
                     testid: _id
                 },
                 success: function (result) {
-                    //alert("Hi, testing");
-                   // alert(result);
+                    if (result=="Please login")
+                     alert(result);
                 }
             });
         }
