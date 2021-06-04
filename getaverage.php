@@ -12,6 +12,7 @@ $stmt = $con->prepare('SELECT AVG(rating) FROM ratings_utilizator WHERE idfilm =
         $stmt->bind_result($rating);
         $stmt->fetch();
         $rating=+$rating;
+        $rating=round($rating,1);
         echo json_encode($rating);
         
     }
