@@ -2,7 +2,7 @@
 session_start();
 require('mysql.php');
 if (!isset($_SESSION['loggedin'])) {
-    echo("te tog sa te loghezi");
+    echo("Please login");
     exit;
 }else{
     $id=$_SESSION["id"];
